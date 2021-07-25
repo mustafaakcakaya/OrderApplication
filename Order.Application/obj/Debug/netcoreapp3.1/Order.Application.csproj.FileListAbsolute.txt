@@ -1,0 +1,12 @@
+C:\privaterepos\orderapplication\Order.Application\bin\Debug\netcoreapp3.1\Order.Application.deps.json
+C:\privaterepos\orderapplication\Order.Application\bin\Debug\netcoreapp3.1\Order.Application.dll
+C:\privaterepos\orderapplication\Order.Application\bin\Debug\netcoreapp3.1\Order.Application.pdb
+C:\privaterepos\orderapplication\Order.Application\bin\Debug\netcoreapp3.1\CommonLibrary.dll
+C:\privaterepos\orderapplication\Order.Application\bin\Debug\netcoreapp3.1\CommonLibrary.pdb
+C:\privaterepos\orderapplication\Order.Application\obj\Debug\netcoreapp3.1\Order.Application.csprojAssemblyReference.cache
+C:\privaterepos\orderapplication\Order.Application\obj\Debug\netcoreapp3.1\Order.Application.AssemblyInfoInputs.cache
+C:\privaterepos\orderapplication\Order.Application\obj\Debug\netcoreapp3.1\Order.Application.AssemblyInfo.cs
+C:\privaterepos\orderapplication\Order.Application\obj\Debug\netcoreapp3.1\Order.Application.csproj.CoreCompileInputs.cache
+C:\privaterepos\orderapplication\Order.Application\obj\Debug\netcoreapp3.1\Order.Application.csproj.CopyComplete
+C:\privaterepos\orderapplication\Order.Application\obj\Debug\netcoreapp3.1\Order.Application.dll
+C:\privaterepos\orderapplication\Order.Application\obj\Debug\netcoreapp3.1\Order.Application.pdb
