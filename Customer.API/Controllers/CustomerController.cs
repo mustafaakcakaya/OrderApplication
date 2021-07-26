@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Customer.API.Controllers
 {
     [ApiController]
-    [Route("api/v1/[controller]")]
+    [Route("api/v1/[controller]/[action]")]
     public class CustomerController : ControllerBase
     {
         private readonly ICustomerRepository _repository;
@@ -19,7 +19,7 @@ namespace Customer.API.Controllers
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
-        [HttpPost("[action]")]
+        [HttpPost]
         [ProducesResponseType(typeof(string), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<Entities.Customer>> Create([FromBody] Entities.Customer customer)
         {
@@ -28,21 +28,21 @@ namespace Customer.API.Controllers
             return Ok(customer.Id);
         }
 
-        [HttpPut("[action]")]
+        [HttpPut]
         [ProducesResponseType(typeof(bool), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> Update([FromBody] Entities.Customer customer)
         {
             return Ok(await _repository.UpdateAsync(customer));
         }
 
-        [HttpDelete("[action]/{id:length(24)}")]
+        [HttpDelete("{id:length(24)}")]
         [ProducesResponseType(typeof(bool), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> Delete(string id)
         {
             return Ok(await _repository.DeleteAsync(id));
         }
 
-        [HttpGet("[action]")]
+        [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<Entities.Customer>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<Entities.Customer>>> Get()
         {
@@ -50,7 +50,7 @@ namespace Customer.API.Controllers
             return Ok(products);
         }
 
-        [HttpGet("[action]/{id:length(24)}")]
+        [HttpGet("{id:length(24)}")]
         [ProducesResponseType(typeof(string), (int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(Entities.Customer), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<Entities.Customer>> Get(string id)
@@ -63,8 +63,7 @@ namespace Customer.API.Controllers
             return Ok(product);
         }
 
-        //TODO: check again.
-        [HttpGet("[action]/{id:length(24)}")]
+        [HttpGet("{id:length(24)}")]
         [ProducesResponseType(typeof(bool), (int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(bool), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> Validate(string id)

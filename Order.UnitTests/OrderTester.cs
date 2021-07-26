@@ -17,11 +17,9 @@ namespace Order.UnitTests
         {
             get
             {
-                if (_config == null)
-                {
-                    var builder = new ConfigurationBuilder().AddJsonFile($"testsettings.json", optional: false);
-                    _config = builder.Build();
-                }
+                if (_config != null) return _config;
+                var builder = new ConfigurationBuilder().AddJsonFile("testsettings.json", optional: false);
+                _config = builder.Build();
 
                 return _config;
             }
@@ -30,7 +28,7 @@ namespace Order.UnitTests
         public void Setup()
         {
             IServiceCollection services = new ServiceCollection();
-            services.AddSingleton<IConfiguration>(Configuration);
+            services.AddSingleton(Configuration);
             _orderRepository = new OrderRepository(new OrderContext(_config));
         }
 
@@ -54,9 +52,8 @@ namespace Order.UnitTests
 
         private async Task CheckoutNewOrder(string id)
         {
-            CommonLibrary.Entities.Order newEntity;
             var entity = await _orderRepository.GetByIdAsync(id);
-            newEntity = new CommonLibrary.Entities.Order()
+            var newEntity = new CommonLibrary.Entities.Order()
             {
                 Id = id,
                 CustomerId = "602d2149e773f2a3990b47f5",

@@ -22,7 +22,6 @@ namespace Order.Application.Features.Commands.CreateOrder
 
         public async Task<string> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
         {
-            //TODO: mapper yaz.
             var orderEntity = _mapper.Map<CommonLibrary.Entities.Order>(request);
             var orderId = await _orderRepository.AddAsync(orderEntity);
 

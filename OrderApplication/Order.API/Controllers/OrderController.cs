@@ -25,7 +25,6 @@ namespace Order.API.Controllers
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        //TODO: testing purpose
         [HttpPost("[action]", Name = "Create")]
         [ProducesResponseType(typeof(string), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<int>> Create([FromBody] CreateOrderCommand command)

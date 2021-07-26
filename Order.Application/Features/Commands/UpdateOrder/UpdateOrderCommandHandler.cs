@@ -26,7 +26,6 @@ namespace Order.Application.Features.Commands.UpdateOrder
             if (orderToUpdate == null)
                 return false;
 
-            //TODO: Mapper yaz.
             _mapper.Map(request, orderToUpdate, typeof(UpdateOrderCommand), typeof(CommonLibrary.Entities.Order));
 
             return await _orderRepository.UpdateAsync(orderToUpdate);
